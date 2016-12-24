@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.askao.reminder"
+    android:versionCode="2"
+    android:versionName="1.0" >
+
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="16" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <receiver android:name="MyReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        <service
+		  android:name="com.askao.reminder.NotiService"
+		  android:enabled="true"/>
+        <receiver android:name="MyStartServiceReceiver" >
+        </receiver>
+        <activity
+            android:name="com.askao.reminder.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.askao.reminder.SelectType"
+                  android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="com.askao.reminder.SelectType" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.askao.reminder.Daily"
+                  android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="com.askao.reminder.Daily" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.askao.reminder.OnceAtCertainDay"
+                  android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="com.askao.reminder.OnceAtCertainDay" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.askao.reminder.EveryMonthAtCertainDay"
+                  android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="com.askao.reminder.EveryMonthAtCertainDay" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.askao.reminder.EveryCertainNumberOfDays"
+                  android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="com.askao.reminder.EveryCertainNumberOfDays" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.askao.reminder.ListNotification"
+                  android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="com.askao.reminder.ListNotification" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.askao.reminder.EditDaily"
+                  android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="com.askao.reminder.EditDaily" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.askao.reminder.EditOnceAtCertainDay"
+                  android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="com.askao.reminder.EditOnceAtCertainDay" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.askao.reminder.EditEveryMonthAtCertainDay"
+                  android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="com.askao.reminder.EditEveryMonthAtCertainDay" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.askao.reminder.EditEveryCertainNumberOfDays"
+                  android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="com.askao.reminder.EditEveryCertainNumberOfDays" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
